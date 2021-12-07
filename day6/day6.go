@@ -7,12 +7,15 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
 	lines := getLines()
-	fmt.Println("Day 6a", solve(lines, 80))
-	fmt.Println("Day 6a", solve(lines, 256))
+	start := time.Now().Nanosecond()
+	fmt.Println("Day 6a", solve(lines, 80), (time.Now().Nanosecond() - start) / 1000, "microsecond")
+	start = time.Now().Nanosecond()
+	fmt.Println("Day 6a", solve(lines, 256), (time.Now().Nanosecond() - start) / 1000, "microsecond")
 }
 
 func solve(lines []int, days int) int {
